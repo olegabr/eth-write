@@ -10,9 +10,9 @@ declare(strict_types=1);
 
 namespace Ethereumico\EthWrite\Tests;
 
-use Olegabr\EthRead\Response;
-use Olegabr\EthRead\Transport;
-use Olegabr\EthRead\TransportError;
+use Ethereumico\EthRead\Response;
+use Ethereumico\EthRead\Transport;
+use Ethereumico\EthRead\TransportError;
 
 /**
  * Canned JSON-RPC answers behind the real {@see Transport} interface.

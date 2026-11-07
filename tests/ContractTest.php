@@ -12,7 +12,7 @@ namespace Ethereumico\EthWrite\Tests;
 
 use Ethereumico\EthWrite\Client;
 use Ethereumico\EthWrite\Contract;
-use Olegabr\EthAbi\Problem;
+use Ethereumico\EthAbi\Problem;
 use PHPUnit\Framework\TestCase;
 
 final class ContractTest extends TestCase

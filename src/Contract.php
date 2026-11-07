@@ -11,10 +11,10 @@ declare(strict_types=1);
 namespace Ethereumico\EthWrite;
 
 use JsonException;
-use Olegabr\EthAbi\Abi\Ethabi;
-use Olegabr\EthAbi\Problem;
-use Olegabr\EthRead\Abi;
-use Olegabr\EthRead\FunctionAbi;
+use Ethereumico\EthAbi\Abi\Ethabi;
+use Ethereumico\EthAbi\Problem;
+use Ethereumico\EthRead\Abi;
+use Ethereumico\EthRead\FunctionAbi;
 use Throwable;
 
 /**

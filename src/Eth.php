@@ -10,7 +10,7 @@ declare(strict_types=1);
 
 namespace Ethereumico\EthWrite;
 
-use Olegabr\EthAbi\Problem;
+use Ethereumico\EthAbi\Problem;
 
 /**
  * Writing to a chain: submission, gas, receipts and the reads a write needs.
@@ -144,7 +144,7 @@ final class Eth
             return ['problem' => new Problem('rpc.unexpected_result', ['eth_gasPrice'])];
         }
 
-        return ['value' => (string) \Olegabr\EthAbi\Support\Uint::fromHex($answer['result'])];
+        return ['value' => (string) \Ethereumico\EthAbi\Support\Uint::fromHex($answer['result'])];
     }
 
     /**
@@ -208,7 +208,7 @@ final class Eth
             return ['problem' => new Problem('rpc.unexpected_result', ['eth_getBalance'])];
         }
 
-        return ['value' => (string) \Olegabr\EthAbi\Support\Uint::fromHex($answer['result'])];
+        return ['value' => (string) \Ethereumico\EthAbi\Support\Uint::fromHex($answer['result'])];
     }
 
     /**

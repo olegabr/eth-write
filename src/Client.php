@@ -12,11 +12,11 @@ namespace Ethereumico\EthWrite;
 
 use InvalidArgumentException;
 use JsonException;
-use Olegabr\EthAbi\Problem;
-use Olegabr\EthRead\Response;
-use Olegabr\EthRead\Revert;
-use Olegabr\EthRead\Transport;
-use Olegabr\EthRead\TransportError;
+use Ethereumico\EthAbi\Problem;
+use Ethereumico\EthRead\Response;
+use Ethereumico\EthRead\Revert;
+use Ethereumico\EthRead\Transport;
+use Ethereumico\EthRead\TransportError;
 use Throwable;
 
 /**

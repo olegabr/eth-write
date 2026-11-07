@@ -10,8 +10,8 @@ declare(strict_types=1);
 
 namespace Ethereumico\EthWrite;
 
-use Olegabr\EthAbi\Problem;
-use Olegabr\EthRead\Transport;
+use Ethereumico\EthAbi\Problem;
+use Ethereumico\EthRead\Transport;
 
 /**
  * A small facade over {@see Client}, {@see Eth} and {@see Contract}.

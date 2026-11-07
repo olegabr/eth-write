@@ -12,7 +12,7 @@ namespace Ethereumico\EthWrite\Tests;
 
 use Ethereumico\EthWrite\Client;
 use InvalidArgumentException;
-use Olegabr\EthAbi\Problem;
+use Ethereumico\EthAbi\Problem;
 use PHPUnit\Framework\TestCase;
 
 final class ClientTest extends TestCase

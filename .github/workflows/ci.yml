@@ -11,6 +11,7 @@ jobs:
   tests:
     name: PHP ${{ matrix.php }}
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     strategy:
       fail-fast: false
       matrix:
@@ -19,14 +20,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # The dependencies are our own packages. While they are resolved through
-      # path repositories this job expects the sibling checkouts to be present
-      # (see .agentwork / workspace layout). Once the packages are published to
-      # git-vcs these steps disappear and `composer install` resolves them by URL.
-      - name: Check out sibling libraries
+      # The dependencies are our own packages, resolved through `path`
+      # repositories, so the sibling checkouts must exist in the parent of the
+      # workspace before `composer install`. A path repository takes its version
+      # from the `options.versions` pin in composer.json, never from a git tag,
+      # so a depth-1 clone of the default branch is enough. Once the packages are
+      # published to git-vcs these steps disappear and `composer install`
+      # resolves them by URL.
+      - name: Sibling libraries
         run: |
-          mkdir -p ../eth-abi ../eth-read ../php-keccak
-          echo "Sibling checkouts are provided by the workspace or the release job."
+          git clone --depth 1 https://github.com/olegabr/eth-abi.git ../eth-abi
+          git clone --depth 1 https://github.com/olegabr/eth-read.git ../eth-read
+          git clone --depth 1 https://github.com/olegabr/php-keccak.git ../php-keccak
 
       - uses: shivammathur/setup-php@v2
         with:
